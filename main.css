@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     box-sizing:content-box;
     background-color: rgba(255, 0, 0, 0.89);
+    font-family: 'Abril Fatface', cursive;
 }
 #container {
     width: 525px;
@@ -20,12 +22,14 @@ body {
 #row2 {
     width:520px;
     height: 260px;
+    position: relative;
     margin-left: 5px;
     margin-top: 5px;
 }
 #row3 {
     width:520px;
     height: 300px;
+    position: relative;
     margin-left: 5px;
 }
 .row1-cell {
@@ -92,8 +96,109 @@ body {
     background-color: rgba(255, 217, 0, 0.466);
     opacity: 0;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 .cell-overlay:hover {
     opacity: 1;
 }
-
+#row3 .cell-overlay:hover #box1 {
+    animation: row3-border1 500ms linear forwards;
+}
+#row3 .cell-overlay:hover #box2 {
+    animation: row3-border2 500ms linear forwards;
+}
+.cell-overlay:hover #box1 {
+    animation: border1 500ms linear forwards;
+}
+.cell-overlay:hover #box2 {
+    animation: border2 500ms linear forwards;
+}
+.cell-overlay:hover p {
+    animation: text 500ms linear forwards;
+}
+#row2 #box1 {
+    width: 10%;
+    height: 5%; 
+}
+#row2 #box2 {
+    width: 10%;
+    height: 5%; 
+}
+#row3 #box1 {
+    width: 30%;
+    height: 10%; 
+}
+#row3 #box2 {
+    width: 30%;
+    height: 10%; 
+}
+#row1 #box1 {
+    width: 30%;
+    height: 20%; 
+}
+#row1 #box2 {
+    width: 30%;
+    height: 20%; 
+}
+#box1,#box2 {
+    border-color: black;
+    border-style: solid;
+    position: absolute;
+}
+#box1 {
+    border-width: 5px 5px 0px 5px;
+}
+#box2 {
+    border-width: 0px 5px 5px 5px;
+}
+p {
+    font-size: 20px;
+    opacity: 0;
+}
+@keyframes border1 {
+    0% {
+        opacity: 0;
+        margin-top: -10%;
+    }
+    100% {
+        opacity: 1;
+        margin-top: -5%;
+    }
+}
+@keyframes border2 {
+    0% {
+        opacity: 0;
+        margin-top: 10%;
+    }
+    100% {
+        opacity: 1;
+        margin-top: 5%;
+    }
+}
+@keyframes text {
+    50% {opacity: 0;}
+    100% {opacity: 1;}
+}
+@keyframes row3-border1 {
+    0% {
+        opacity: 0;
+        margin-top: -15%;
+    }
+    100% {
+        opacity: 1;
+        margin-top: -8%;
+    }
+}
+@keyframes row3-border2 {
+    0% {
+        opacity: 0;
+        margin-top: 15%;
+    }
+    100% {
+        opacity: 1;
+        margin-top: 8%;
+    }
+}
